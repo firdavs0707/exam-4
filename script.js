@@ -3,8 +3,6 @@ let movieRes = $("#template-movies-js").content;
 
 const elSpinner = document.querySelector(".anime__spinner");
 
-// let elInputVal
-
 let searchForm = $(".wrapper-form-js");
 let searchPlace = $(".search-movie-js", searchForm);
 
