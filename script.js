@@ -34,8 +34,6 @@ let catchErrors = () => {
   movieList.innerHTML = '';
   
   let errorItem = document.createElement("li");
-  
-  // <h5 class="mt-2 h1 link-danger">Not found!</h5>
   errorItem.innerHTML = `
     
 
