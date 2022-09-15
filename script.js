@@ -14,7 +14,7 @@ let renderMovies = data => {
 
   let movieWrapper = document.createDocumentFragment()
 
-  data.forEach(film => {
+  for(const film of data) {
     let cloneMovie = movieRes.cloneNode(true);
 
     cloneMovie.querySelector('.movie-img-js').src = film.Poster;
@@ -23,7 +23,8 @@ let renderMovies = data => {
     cloneMovie.querySelector('.movie-title-js').textContent = film.Title;
 
     movieWrapper.appendChild(cloneMovie);
-  })
+  }
+
 
   movieList.appendChild(movieWrapper);
 }
@@ -110,7 +111,7 @@ searchForm.addEventListener("submit", (evt) => {
   movieList.innerHTML = '';
   spinnerRemove();
   
-  let elInputVal = searchPlace.value.trim();
+  elInputVal = searchPlace.value.trim();
   
   mainPage = 1;
 
@@ -126,28 +127,25 @@ searchForm.addEventListener("submit", (evt) => {
     div.classList.add('d-flex')
     div.classList.remove('d-none')
   }
+})
+btnNext.addEventListener('click', () => {
+  if (mainPage < Math.ceil(maxn/10)) {
+    mainPage = mainPage + 1;
+    showMovie(elInputVal);
+    res.textContent = mainPage
+  }
+})
 
-  btnNext.addEventListener('click', () => {
+btnPer.addEventListener('click', () => {
     
-    if (mainPage < Math.ceil(maxn/10)) {
-      mainPage = mainPage + 1;
-      showMovie(elInputVal);
-      res.textContent = mainPage
-    }
-    
-  })
-  
-  btnPer.addEventListener('click', () => {
-      
-    if (mainPage > 1) {
-      mainPage -= 1;
-      showMovie(elInputVal);
-      res.textContent = mainPage
-    } else {
-      return;
-  
-    }
-  })
+  if (mainPage > 1) {
+    mainPage -= 1;
+    showMovie(elInputVal);
+    res.textContent = mainPage
+  } else {
+    return;
+
+  }
 
 })
 
