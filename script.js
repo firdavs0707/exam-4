@@ -110,7 +110,7 @@ searchForm.addEventListener("submit", (evt) => {
   movieList.innerHTML = '';
   spinnerRemove();
   
-  elInputVal = searchPlace.value.trim();
+  let = elInputVal = searchPlace.value.trim();
   
   mainPage = 1;
 
