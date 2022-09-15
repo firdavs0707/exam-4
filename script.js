@@ -127,31 +127,31 @@ searchForm.addEventListener("submit", (evt) => {
     div.classList.remove('d-none')
   }
 
-
-
-})
-
-btnNext.addEventListener('click', () => {
+  btnNext.addEventListener('click', () => {
     
-  if (mainPage < Math.ceil(maxn/10)) {
-    mainPage = mainPage + 1;
-    showMovie(elInputVal);
-    res.textContent = mainPage
-  }
+    if (mainPage < Math.ceil(maxn/10)) {
+      mainPage = mainPage + 1;
+      showMovie(elInputVal);
+      res.textContent = mainPage
+    }
+    
+  })
   
+  btnPer.addEventListener('click', () => {
+      
+    if (mainPage > 1) {
+      mainPage -= 1;
+      showMovie(elInputVal);
+      res.textContent = mainPage
+    } else {
+      return;
+  
+    }
+  })
+
 })
 
-btnPer.addEventListener('click', () => {
-    
-  if (mainPage > 1) {
-    mainPage -= 1;
-    showMovie(elInputVal);
-    res.textContent = mainPage
-  } else {
-    return;
 
-  }
-})
 
 const showMovie = async title => {
   try {
